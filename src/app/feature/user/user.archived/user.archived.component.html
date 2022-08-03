@@ -1,0 +1,58 @@
+<div class="grid grid-cols-12 divide-x h-screen">
+
+
+  <!-- List Persons Archived -->
+  <div class="overflow-y-auto col-span-12">
+    <table class="table table-compact w-full">
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Usernamuser
+          <th>Email</th>
+          <th>Password</th>
+          <th>Creado</th>
+          <th>Modificado</th>
+          <th>Estado</th>
+          <th></th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <!--Recorre cada parametry los muestra-->
+        <tr *ngFor="let user of listUserArchived">
+          <td>
+            {{ user.userId }}
+          </td>
+          <td>
+            {{ user.username }}
+          </td>
+          
+          <td>
+            {{ user.email }}
+          </td>
+          <td>
+            {{ user.password }}
+          </td>
+          <td>
+            {{ user.created | date: "yyyy/MM/dd" }}
+          </td>
+          <td>
+            {{ user.updated | date: "yyyy/MM/dd" }}
+          </td>
+          <td>
+            {{ user.enabled }}
+          </td>
+          <td>
+            <!--Cambia formato-->
+            <a href="user"><mat-icon
+              class="cursor-pointer"
+              (click)="restore(user)"
+              >restore</mat-icon
+            ></a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+

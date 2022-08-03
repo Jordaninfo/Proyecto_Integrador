@@ -1,0 +1,99 @@
+<app-person-toolbar (entityName)="currentEntity.name" ></app-person-toolbar>  <div class="grid justify-center mt-4">
+    <div class="card shadow-2xl shadow-black">
+      <div class="card-body">
+        <div class="card-title">
+          Administracion <span class="text-primary">Usuarios</span>
+        </div>
+        <div class="divider"></div>
+        <div class="grid grid-cols-4 gap-5">
+          <div class="col-span-2">
+            <label for="">Identificacion</label>
+            <input
+              class="input input-primary w-full"
+              type="text"
+              name=""
+              id=""
+              placeholder="Digite su numero DNI"
+              [(ngModel)]="currentEntity.dni"
+            />
+          </div>
+          <div class="col-span-2">
+            <label for="">Nombre</label>
+            <input
+              class="input input-primary w-full"
+              type="text"
+              name=""
+              id=""
+              placeholder="Escriba su nombre"
+              [(ngModel)]="currentEntity.name"
+            />
+          </div>
+          <div class="col-span-4">
+            <label for="">Email</label>
+            <input
+              class="input input-primary w-full"
+              type="text"
+              name=""
+              id=""
+              placeholder="Escriba su correo"
+              [(ngModel)]="currentEntity.email"
+            />
+          </div>
+          <div class="col-span-2">
+            <label for="">Username</label>
+            <input
+              class="input input-primary w-full"
+              type="text"
+              name=""
+              id=""
+              placeholder="Escriba su usuario"
+              [(ngModel)]="currentEntity.username"
+            />
+          </div>
+          <div class="col-span-2">
+            <label for="">Password</label>
+            <input
+              class="input input-primary w-full"
+              type="text"
+              name=""
+              id=""
+              placeholder="Escriba su contraseña"
+              [(ngModel)]="currentEntity.password"
+            />
+          </div>
+
+        </div>
+        <label >Role</label>
+        <app-rol-combobox (rolIdEmitter)="currentEntity.rolId=$event"></app-rol-combobox>
+        <div class="formRole-control"></div>
+            <div>
+              <label class="label cursor-pointer justify-center">
+                <span class="label-text">Activo</span>
+                <input
+                  type="checkbox"
+                  class="toggle ml-2"
+                  [(ngModel)]="currentEntity.enabled"
+                />
+              </label>
+            </div>
+
+<br>
+<br>
+        <div
+          class="card-actions w-full flex justify-between absolute bottom-0 left-0 p-8"
+        >
+          <button class="btn btn-primary" (click)="cancel()">Cancelar</button>
+
+          <button
+            class="btn btn-primary btn-5m"
+            (click)="save(currentEntity)"
+            (click)="refresh()"
+          >
+            Guardar
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
